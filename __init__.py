@@ -76,26 +76,12 @@ Fortran code. In some cases it might be worth using this old API.
    complex_ode   -- Convert a complex-valued ODE to real-valued and integrate.
 
 
-Solving boundary value problems for ODE systems
-===============================================
 
-.. autosummary::
-   :toctree: generated/
-
-   solve_bvp     -- Solve a boundary value problem for a system of ODEs.
 """
-from __future__ import division, print_function, absolute_import
 
-from .quadrature import *
-from .odepack import *
-from .quadpack import *
-from ._ode import *
-from ._bvp import solve_bvp
 from ._ivp import (solve_ivp, OdeSolution, DenseOutput,
                    OdeSolver, RK23, RK45, Radau, BDF, LSODA)
 
 __all__ = [s for s in dir() if not s.startswith('_')]
 
-from scipy._lib._testutils import PytestTester
-test = PytestTester(__name__)
-del PytestTester
+
